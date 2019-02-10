@@ -5,6 +5,7 @@ const babel = require('gulp-babel');
 const uglify = require("gulp-uglify");
 const HTMLmin = require("gulp-minify-html");
 const autoprefixer = require("gulp-autoprefixer");
+const del = require('del');
 const server = require("browser-sync").create();
 
 function html() {
@@ -40,6 +41,10 @@ function assets() {
     .pipe(dest('build/assets'))
 }
 
+function clean() {
+  return del(['build'])
+}
+
 function reload(done) {
   server.reload();
   done();
@@ -52,13 +57,16 @@ function serve(done) {
       baseDir: 'build'
     }
   });
-  series(html, css, js, assets)
-  watch(['src/*.html', 'src/styles/*.scss', 'src/styles/**/*.scss', 'src/*.js'], series(html, css, js, assets, reload));
+  watch(
+    ['src/*.html', 'src/styles/*.scss', 'src/styles/**/*.scss', 'src/*.js'], 
+    series(clean, html, css, js, assets, reload)
+  );
 }
 
 exports.js = js;
 exports.css = css;
 exports.html = html;
 exports.assets = assets;
-exports.build = series(js,css,assets,html)
-exports.serve = series(js,css,assets,html, serve);
+exports.clean = clean;
+exports.build = series(clean, js, css, assets, html)
+exports.serve = series(clean, js, css, assets, html, serve);
