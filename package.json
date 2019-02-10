@@ -1,0 +1,27 @@
+{
+  "name": "simpleslider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "swiper": "^4.4.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1"
+  }
+}
