@@ -16,9 +16,11 @@
     .swiper-button {
       &-prev {
         background-image: url('../assets/chevron-left-solid.svg');
+        outline: none;
       }
       &-next {
         background-image: url('../assets/chevron-right-solid.svg');
+        outline: none;
       }
     }
   }

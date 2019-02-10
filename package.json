@@ -9,8 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "del": "^3.0.0",
-    "swiper": "^4.4.6"
+    "del": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
