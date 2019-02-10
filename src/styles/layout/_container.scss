@@ -1,0 +1,12 @@
+.container {
+  @include flexCenter();
+  width: 100%;
+  height: 100%;
+  max-width: 1280px;
+  padding: 10px;
+  margin: 0 auto;
+  &__header {
+    text-align: center;
+    color: $color1;
+  }
+}

@@ -14,14 +14,14 @@ function html() {
 }
 
 function css() {
-  return src('src/*.scss')
+  return src('src/styles/**/*.scss')
     .pipe(sass().on("error", sass.logError))
 		.pipe(autoprefixer({
 			browsers: ["last 2 versions"],
 			cascade: false
 		}))
     .pipe(sass({outputStyle: 'compressed'}))
-		.pipe(dest("build"))
+		.pipe(dest("build/styles"))
 		.pipe(server.stream());
 };
 
@@ -52,11 +52,13 @@ function serve(done) {
       baseDir: 'build'
     }
   });
-  watch(['src/*.html', 'src/*.scss', 'src/*.js'], series(html, css, js, assets, reload));
+  series(html, css, js, assets)
+  watch(['src/*.html', 'src/styles/*.scss', 'src/styles/**/*.scss', 'src/*.js'], series(html, css, js, assets, reload));
 }
 
 exports.js = js;
 exports.css = css;
 exports.html = html;
 exports.assets = assets;
-exports.serve = serve;
+exports.build = series(js,css,assets,html)
+exports.serve = series(js,css,assets,html, serve);

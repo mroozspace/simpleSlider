@@ -1,0 +1,33 @@
+.grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: stretch;
+  &__col {
+    display: flex;
+    margin: 23px 5px;
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 1020px) {
+  .grid {
+    &__row {
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 1020px) and (min-width: 600px ){
+  .grid {
+    &__col {
+      width: calc( 50% - 10px);
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.card {
+  text-align: center;
+  min-height: 311px;
+  width: 190px;
+  padding: 5px;
+  margin: 0 auto;
+  transition: box-shadow 300ms;
+  border-radius: 10px;
+  &:hover {
+    box-shadow: 0 0 10px 5px $cardShadow;
+  }
+  &__header {
+    position: relative;
+    margin-bottom: 17px;
+  }
+  &__contact {
+    @include flexCenter();
+    position: absolute;
+    background-color: $color1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: 5px;
+    right: 5px;
+  }
+  &__envelope {
+    width: 18px;
+    height: 17px;
+    margin-bottom: 2px;
+  }
+  &__image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+  }
+  &__name {
+    color: $color1;
+    margin: 0;
+    margin-bottom: 19px;
+    font-weight: normal;
+    font-size: 20px;
+  }
+  &__position {
+    color: $color2;
+    margin: 0;
+    margin-bottom: 7px;
+    font-weight: normal;
+    font-size: 14px;
+  }
+  &__place {
+    color: $color3;
+    margin: 0;
+    font-weight: normal;
+  font-size: 14px;    
+  }
+}
