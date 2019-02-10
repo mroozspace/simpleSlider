@@ -16,7 +16,7 @@
   }
 }
 
-@media (max-width: 1020px) {
+@media (max-width: $lg) {
   .grid {
     &__row {
       justify-content: center;
@@ -24,7 +24,7 @@
   }
 }
 
-@media (max-width: 1020px) and (min-width: 600px ){
+@media (max-width: $lg) and (min-width: $md ){
   .grid {
     &__col {
       width: calc( 50% - 10px);

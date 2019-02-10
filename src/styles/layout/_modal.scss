@@ -1,3 +1,48 @@
 .modal {
-  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding: 10px;
+  background-color: $modalBg;
+  color: $modalColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 300ms;
+  opacity: 0;
+  &--revealing {
+    visibility: visible;
+  }
+  &--visible {
+    opacity: 1;
+  }
+  &--hiding {
+    opacity: 0;
+  }
+  &--hidden {
+    visibility: hidden;
+  }
+  &__close {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    cursor: pointer;
+    font-size: 60px;
+    font-weight: 900;
+    color: #fff;
+    z-index: 100;
+  }
+}
+@media (max-width: $md) {
+  .modal {
+    padding: 35px;
+    &__close {
+      font-size: 40px;
+    }
+  }
 }

@@ -1,0 +1,26 @@
+.slide{
+  text-align: center;
+  border: 3px dashed rgba(255, 255, 255, 0.3);
+  padding: 70px;
+  &__position {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 300;
+  }
+  &__name {
+    margin: 0;
+    font-size: 60px;
+  }
+}
+
+@media (max-width: $md) {
+  .slide {
+    padding: 35px;
+    &__position {
+      font-size: 16px;
+    }
+    &__name {
+      font-size: 24px;
+    }
+  }
+}

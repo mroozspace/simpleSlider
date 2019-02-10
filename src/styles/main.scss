@@ -2,11 +2,14 @@
 
 @import 'utils/mixins',
              'utils/reset',
-             'utils/variables';
+             'utils/variables',
+             'utils/global',
+             'utils/breakpoints';
 
 @import 'layout/container',
              'layout/modal',
              'layout/grid';
 
 @import 'components/card',
-             'components/swiper';
+             'components/swiper',
+             'components/slide';
